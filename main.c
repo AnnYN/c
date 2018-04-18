@@ -1,8 +1,8 @@
 //
 //  main.c
-//  C程序设计语言
+//  my c file
 //
-//  Created by YaNan on 2018/4/17.
+//  Created by YaNan on 2018/4/18.
 //  Copyright © 2018年 YaNan. All rights reserved.
 //
 
@@ -10,24 +10,53 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    /*print Fahrenheit-Celsius table
-     for fahr  = 0, 20, ......,300 */
-        int fahr, celsius;
-        int lower, upper, step;
-        
-        lower = 0;          /* lower limit of temperature table */
-        upper = 300;        /* upper limit */
-        step = 20;          /*step size */
-        
-        fahr = lower;
-        while (fahr <= upper ){
-            celsius = 5*(fahr - 32) / 9;
-            printf("%3d %6d\n", fahr, celsius);
-            fahr = fahr + step ;
-        }
-    return 0;
+    int hoge = 5;
+    int piyo = 10;
+    int *hoge_p;
     
+    //输出每个变量的地址
+    printf("&hoge..%p\n",&hoge);
+    printf("&piyo..%p\n",&piyo);
+    printf("&hoge_p..%p\n",&hoge_p);
+    
+    //将hoge的地址赋予hoge_p
+    hoge_p = &hoge;
+    printf("hoge_p..%p\n",hoge_p);
+    
+    //通过hoge_p输出hoge的内容
+    printf("*hoge_p..%d\n",*hoge_p);
+    
+    //通过hoge_p修改hoge的内容
+    *hoge_p = 10;
+    printf("hoge..%d\n",hoge);
+    
+    //通过hoge修改自身的内容
+    hoge = 4;
+    printf("hoge..%d\n",hoge);
+    
+    //查看hoge_p的值和地址,*hoge_p等同于hoge
+    printf("hoge_p..%p\n",hoge_p);
+    printf("hoge_p..%d\n",*hoge_p);
+    printf("&hoge_p..%p\n",&hoge_p);
+    
+
+    printf("Hello, World!\n");
+    return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
